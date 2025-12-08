@@ -9,6 +9,7 @@ function ColorPlayer() {
     const [currentPlayer, setCurrentPlayer] = useState(1);
 
 
+
     const colors = ["red", "pink", "blue", "green", "purple", "orange"];
 
     function handleSelectColor(player, color) {
