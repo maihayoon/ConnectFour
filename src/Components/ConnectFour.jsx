@@ -87,7 +87,6 @@ function ConnectFour() {
                 </div>
             )}
 
-
             {/* מציגים לוח רק אם כבר נבנה */}
             {board.length > 0 && (
                 <Board

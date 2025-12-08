@@ -10,6 +10,7 @@ function Board({ board, onColumnClick }) {
     return (
         <div className="board">
 
+
             {/* 🔹 שורת כפתורים מעל הלוח – כפתור לכל עמודה */}
             <div className="board-header">
                 {board[0].map((_, colIndex) => (

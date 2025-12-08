@@ -50,6 +50,7 @@ function ColorPlayer() {
                     {playerColor1 ? playerColor1 : "עדיין לא נבחר צבע"}
                 </h3>
 
+
                 {colors.map((color) => (
                     <button
                         key={color}
