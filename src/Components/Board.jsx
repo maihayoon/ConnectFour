@@ -1,35 +1,46 @@
 import React from "react";
 import "./ConnectFour.css";
 
-function Board({ board }) {
+function Board({ board, onColumnClick }) {
+    // אם עוד אין לוח – לא מצייר כלום
+    if (!board || board.length === 0) {
+        return null;
+    }
+
     return (
         <div className="board">
+
+            {/* 🔹 שורת כפתורים מעל הלוח – כפתור לכל עמודה */}
+            <div className="board-header">
+                {board[0].map((_, colIndex) => (
+                    <button
+                        key={colIndex}
+                        className="col-button"
+                        onClick={() => {
+                            if (onColumnClick) onColumnClick(colIndex);
+                        }}
+                    >
+                        ↓
+                    </button>
+
+                ))}
+            </div>
+
+            {/* 🔹 הלוח עצמו */}
             {board.map((row, rowIndex) => (
                 <div className="board-row" key={rowIndex}>
-
-                    {/* כאן התחיל השינוי - פתחנו בלוק קוד רגיל */}
                     {row.map((cell, colIndex) => {
 
-                        // 1. קודם כל מגדירים את המחלקה הבסיסית
-                        let myClassName = "col";
 
-                        // 2. בדיקה פשוטה: האם יש צבע לתא הזה?
-                        if (cell.color !== null) {
-                            // אם כן, נוסיף לו את שם הצבע (למשל: "col player-red")
-                            myClassName = "col player-" + cell.color;
-                        }
-
-
-                        // 3. מחזירים את ה-div עם השם שבחרנו
                         return (
                             <div
                                 key={colIndex}
-                                className={myClassName}
+                                className="col"
+
+                                style={{ backgroundColor: cell.color }}
                             />
                         );
                     })}
-
-
                 </div>
             ))}
         </div>

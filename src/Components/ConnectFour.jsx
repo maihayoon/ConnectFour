@@ -12,6 +12,10 @@ function ConnectFour() {
 
 
 
+
+
+
+
     function CooseSize() {
         const r = Number(row);
         const c = Number(col);
@@ -51,34 +55,38 @@ function ConnectFour() {
 
     return (
         <div>
-            <div>
-                <ColorPlayer>
-
-                </ColorPlayer>
-            </div>
             <h1>ארבע בשורה</h1>
+            {board.length === 0 && (
+                <div>
+                    <ColorPlayer
 
-            <input
-                type="number"
-                placeholder="הכנס את כמות השורות"
-                value={row}
-                onChange={(e) => setRow(e.target.value)}
-            />
+                    />
 
-            <input
-                type="number"
-                placeholder="הכנס את כמות העמודות"
-                value={col}
-                onChange={(e) => setCol(e.target.value)}
-            />
+                    <div >
+                        <input
+                            type="number"
+                            placeholder="הכנס את כמות השורות"
+                            value={row}
+                            onChange={(e) => setRow(e.target.value)}
+                        />
 
-            <button
-                disabled={row.trim() === "" || col.trim() === ""}
-                onClick={CooseSize}
+                        <input
+                            type="number"
+                            placeholder="הכנס את כמות העמודות"
+                            value={col}
+                            onChange={(e) => setCol(e.target.value)}
+                        />
 
-            >
-                edd
-            </button>
+                        <button
+                            disabled={row.trim() === "" || col.trim() === ""}
+                            onClick={CooseSize}
+                        >
+                            edd
+                        </button>
+                    </div>
+                </div>
+            )}
+
 
             {/* מציגים לוח רק אם כבר נבנה */}
             {board.length > 0 && (

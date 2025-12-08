@@ -1,17 +1,89 @@
-/* מרכז את כל הטקסט והרכיבים למרכז המסך */
+/* ConnectFour.css */
+
+/* --- הגדרות כלליות --- */
 body {
     text-align: center;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* צבע רקע כללי נעים לעין */
+    background-color: #f4f4f4;
 }
 
-/* עיצוב הכותרת */
 h1 {
     color: #333;
     margin-bottom: 20px;
 }
 
-/* עיצוב שדות הקלט (אינפוטים) */
+/* --- הגדרות הלוח (המסגרת הכחולה) --- */
+.board {
+    display: flex;           /* מסדר את השורות אחת מתחת לשנייה */
+    flex-direction: column;
+    align-items: center;     /* ממקם הכל במרכז */
+
+    background-color: #0055aa; /* הכחול של המשחק */
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: fit-content;      /* רוחב לפי התוכן */
+    margin-left: auto;       /* מרכוז הלוח במסך */
+    margin-right: auto;
+}
+
+/* --- שורות --- */
+/* גם שורת הכפתורים וגם שורות הלוח צריכות להתנהג אותו דבר */
+.board-row, .board-header {
+    display: flex;           /* מסדר את האלמנטים בשורה */
+}
+
+/* --- העיגולים בלוח --- */
+.col {
+    width: 50px;            /* רוחב */
+    height: 50px;           /* גובה - חובה שיהיה קיים! */
+    background-color: white;
+    border-radius: 50%;
+    margin: 5px;            /* מרווח בין עיגולים */
+    border: 2px solid #004488;
+}
+
+/* --- הכפתורים למעלה --- */
+.col-button {
+    /* חישוב מדויק: רוחב העיגול (50) + הגבולות שלו (2+2) = 54px */
+    width: 54px;
+    height: 40px;
+
+    margin: 5px;            /* חייב להיות זהה למרווח של העיגולים (.col) */
+
+    cursor: pointer;
+    border: none;
+    background-color: #e0e0e0; /* צבע אפור לכפתור */
+    border-radius: 5px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-button:hover {
+    background-color: #ccc;
+}
+
+/* --- צבעי השחקנים --- */
+.player-red {
+    background-color: #ff4136 !important; /* אדום */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.player-yellow {
+    background-color: #ffdc00 !important; /* צהוב */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.player-blue { background-color: blue !important; }
+.player-green { background-color: green !important; }
+.player-purple { background-color: purple !important; }
+.player-orange { background-color: orange !important; }
+.player-pink { background-color: pink !important; }
+
+/* --- שדות קלט וכפתורים כלליים --- */
 input {
     padding: 10px;
     margin: 10px;
@@ -22,10 +94,9 @@ input {
     text-align: center;
 }
 
-/* עיצוב הכפתור */
 button {
     padding: 10px 20px;
-    background-color: #28a745; /* ירוק */
+    background-color: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
@@ -35,49 +106,6 @@ button {
 }
 
 button:disabled {
-    background-color: #cccccc; /* אפור כשאי אפשר ללחוץ */
+    background-color: #cccccc;
     cursor: not-allowed;
-}
-
-button:hover:not(:disabled) {
-    background-color: #218838; /* ירוק כהה כשעוברים עם העכבר */
-}
-
-/* --- עיצוב הלוח עצמו --- */
-
-.board {
-    display: inline-block; /* שהלוח יהיה בדיוק בגודל של התוכן */
-    background-color: #0055aa; /* הכחול הקלאסי של המשחק */
-    padding: 15px; /* רווח סביב הלוח */
-    border-radius: 10px; /* פינות עגולות ללוח הכחול */
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* צל קטן מתחת ללוח */
-}
-
-/* שורה בלוח - מסדרת את העיגולים אחד ליד השני */
-.board-row {
-    display: flex;
-}
-
-/* עיצוב של כל חור/עיגול בלוח */
-.col {
-    width: 50px;
-    height: 50px;
-    background-color: white; /* צבע ברירת מחדל (חור ריק) */
-    border-radius: 50%; /* הופך את הריבוע לעיגול מושלם */
-    margin: 5px; /* רווח בין העיגולים */
-    border: 2px solid #004488; /* מסגרת דקה כהה ליופי */
-}
-
-/* --- צבעי השחקנים --- */
-/* המחלקה הזו מתווספת כשיש שחקן אדום */
-.player-red {
-    background-color: #ff4136; /* אדום */
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* אפקט תלת מימד */
-}
-
-/* המחלקה הזו מתווספת כשיש שחקן צהוב (להמשך) */
-.player-yellow {
-    background-color: #ffdc00; /* צהוב */
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
