@@ -1,0 +1,53 @@
+.color-player {
+    padding: 16px;
+    text-align: center;
+}
+
+.players-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 16px;
+}
+
+.player-box {
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+.color-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.color-button {
+    width: 60px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 10px;
+}
+
+.color-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.color-circle {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 4px;
+    border: 1px solid #000;
+}
+
+.turn-box {
+    margin-top: 16px;
+}

@@ -1,0 +1,83 @@
+/* מרכז את כל הטקסט והרכיבים למרכז המסך */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* צבע רקע כללי נעים לעין */
+}
+
+/* עיצוב הכותרת */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* עיצוב שדות הקלט (אינפוטים) */
+input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 200px;
+    text-align: center;
+}
+
+/* עיצוב הכפתור */
+button {
+    padding: 10px 20px;
+    background-color: #28a745; /* ירוק */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:disabled {
+    background-color: #cccccc; /* אפור כשאי אפשר ללחוץ */
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #218838; /* ירוק כהה כשעוברים עם העכבר */
+}
+
+/* --- עיצוב הלוח עצמו --- */
+
+.board {
+    display: inline-block; /* שהלוח יהיה בדיוק בגודל של התוכן */
+    background-color: #0055aa; /* הכחול הקלאסי של המשחק */
+    padding: 15px; /* רווח סביב הלוח */
+    border-radius: 10px; /* פינות עגולות ללוח הכחול */
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* צל קטן מתחת ללוח */
+}
+
+/* שורה בלוח - מסדרת את העיגולים אחד ליד השני */
+.board-row {
+    display: flex;
+}
+
+/* עיצוב של כל חור/עיגול בלוח */
+.col {
+    width: 50px;
+    height: 50px;
+    background-color: white; /* צבע ברירת מחדל (חור ריק) */
+    border-radius: 50%; /* הופך את הריבוע לעיגול מושלם */
+    margin: 5px; /* רווח בין העיגולים */
+    border: 2px solid #004488; /* מסגרת דקה כהה ליופי */
+}
+
+/* --- צבעי השחקנים --- */
+/* המחלקה הזו מתווספת כשיש שחקן אדום */
+.player-red {
+    background-color: #ff4136; /* אדום */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* אפקט תלת מימד */
+}
+
+/* המחלקה הזו מתווספת כשיש שחקן צהוב (להמשך) */
+.player-yellow {
+    background-color: #ffdc00; /* צהוב */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
