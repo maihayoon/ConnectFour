@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+
 import "./ColorPlayer.css";
 // בעתיד תשתמש בזה
 // import Board from "./Board.jsx";
 
-function ColorPlayer() {
-    const [playerColor1, setPlayerColor1] = useState(null);
-    const [playerColor2, setPlayerColor2] = useState(null);
-    const [currentPlayer, setCurrentPlayer] = useState(1);
+function ColorPlayer({playerColor2,setPlayerColor2,playerColor1,setPlayerColor1,currentPlayer, setCurrentPlayer}) {
+
 
 
 
