@@ -2,7 +2,7 @@ import React from "react";
 import "./ConnectFour.css";
 
 function Board({ board, onColumnClick }) {
-    // אם עוד אין לוח – לא מצייר כלום
+
     if (!board || board.length === 0) {
         return null;
     }
@@ -11,7 +11,7 @@ function Board({ board, onColumnClick }) {
         <div className="board">
 
 
-            {/* 🔹 שורת כפתורים מעל הלוח – כפתור לכל עמודה */}
+
             <div className="board-header">
                 {board[0].map((_, colIndex) => (
                     <button
@@ -27,7 +27,7 @@ function Board({ board, onColumnClick }) {
                 ))}
             </div>
 
-            {/* 🔹 הלוח עצמו */}
+
             {board.map((row, rowIndex) => (
                 <div className="board-row" key={rowIndex}>
                     {row.map((cell, colIndex) => {
@@ -40,10 +40,13 @@ function Board({ board, onColumnClick }) {
 
                                 style={{ backgroundColor: cell.color }}
                             />
+
                         );
                     })}
                 </div>
+
             ))}
+
         </div>
     );
 }
