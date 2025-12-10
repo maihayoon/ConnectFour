@@ -114,6 +114,7 @@ function ConnectFour() {
             newBoard.push(rowArr);
         }
 
+
         setBoard(newBoard);
         setWinner(null);
         setCurrentPlayer(1);
